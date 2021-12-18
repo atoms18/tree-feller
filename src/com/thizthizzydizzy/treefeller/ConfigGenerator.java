@@ -1,6 +1,6 @@
 package com.thizthizzydizzy.treefeller;
 
-import com.thizthizzydizzy.treefeller.compat.TreeFellerCompat;
+//import com.thizthizzydizzy.treefeller.compat.TreeFellerCompat;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -168,7 +168,7 @@ public class ConfigGenerator{
     }
     public static void main(String[] args){
         if(args.length==1&&args[0].equals("genConfig")){
-            TreeFellerCompat.init();
+//            TreeFellerCompat.init();
             String version = read(new File("src\\plugin.yml"));//Not the best way to do it, but it works
             int i = version.indexOf("version:");
             if(i==-1){

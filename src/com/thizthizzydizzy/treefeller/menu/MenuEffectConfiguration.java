@@ -249,17 +249,17 @@ public class MenuEffectConfiguration extends Menu{
             if(click==ClickType.LEFT)open(parent);
             if(click==ClickType.SHIFT_RIGHT){
                 TreeFeller.effects.remove(effect);
-                if(Option.EFFECTS.globalValue!=null)Option.EFFECTS.globalValue.remove(effect);
-                for(Tool t : TreeFeller.tools){
-                    if(Option.EFFECTS.getValue(t)!=null){
-                        Option.EFFECTS.getValue(t).remove(effect);
-                    }
-                }
-                for(Tree t : TreeFeller.trees){
-                    if(Option.EFFECTS.getValue(t)!=null){
-                        Option.EFFECTS.getValue(t).remove(effect);
-                    }
-                }
+//                if(Option.EFFECTS.globalValue!=null)Option.EFFECTS.globalValue.remove(effect);
+//                for(Tool t : TreeFeller.tools){
+//                    if(Option.EFFECTS.getValue(t)!=null){
+//                        Option.EFFECTS.getValue(t).remove(effect);
+//                    }
+//                }
+//                for(Tree t : TreeFeller.trees){
+//                    if(Option.EFFECTS.getValue(t)!=null){
+//                        Option.EFFECTS.getValue(t).remove(effect);
+//                    }
+//                }
                 open(parent);
             }
         }));

@@ -1,6 +1,6 @@
 main: com.thizthizzydizzy.treefeller.TreeFeller
-version: 1.16.4
-api-version: 1.18
+version: 1.16.2
+api-version: 1.16
 author: ThizThizzyDizzy
 website: "https://www.spigotmc.org/resources/thizzyz-tree-feller.64346/"
 name: TreeFeller
@@ -8,6 +8,8 @@ commands:
     treefeller:
         description: TreeFeller commands
         usage: /treefeller (help|toggle [on|off]|on|off|reload|debug [on|off]|config)
+depend:
+  - AppleServerPlugin
 softdepend:
   - mcMMO
   - CoreProtect
@@ -17,4 +19,3 @@ softdepend:
   - OreRegenerator
   - Drop2Inventory
   - Drop2InventoryPlus
-  - Jobs

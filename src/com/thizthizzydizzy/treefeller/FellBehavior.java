@@ -41,7 +41,7 @@ public enum FellBehavior{
         @Override
         void breakBlock(DetectedTree detectedTree, TreeFeller plugin, boolean dropItems, Tree tree, Tool tool, ItemStack axe, Block block, Block origin, int lowest, Player player, long seed, ArrayList<Modifier> modifiers, DirectionalFallBehavior directionalFallBehavior, boolean lockCardinal, double directionalFallVelocity, boolean rotate, ArrayList<Material> overridables, double randomFallVelocity, double explosiveFallVelocity, double verticalFallVelocity){
             Vector v = directionalFallBehavior.getDirectionalVel(seed, player, block, lockCardinal, directionalFallVelocity).normalize();
-            plugin.naturalFalls.add(new NaturalFall(player, v, origin, block, block.getY()-lowest, rotate, overridables));
+//            plugin.naturalFalls.add(new NaturalFall(player, v, origin, block, block.getY()-lowest, rotate, overridables));
             block.setType(Material.AIR);
         }
     },
@@ -210,6 +210,7 @@ public enum FellBehavior{
         Vector start = b.getLocation().toVector();
         Vector bottomLogPos = start.clone().setY(bottomLogY);
         Vector end = getEndPosition(start, bottomLogPos, fallDirection, yVelocity);
+        System.out.println("start "+start.toString()+", end "+end.toString());
         return calculateInitialVelocity(start, end.add(start), yVelocity);
     }
 
@@ -250,6 +251,7 @@ public enum FellBehavior{
      * @return The velocity that should be applied to the falling block
      */
     private static Vector calculateInitialVelocity(Vector start, Vector end, double yVelocity) {
+        System.out.println(start.getBlockY()+" "+end.getBlockY());
         int t = getFallTime(start.getY()-end.getY(), yVelocity);
         return new Vector(getAxisVelocity(end.getX() - start.getX(), t), 0, getAxisVelocity(end.getZ() - start.getZ(), t));
     }

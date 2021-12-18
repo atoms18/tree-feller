@@ -61,14 +61,14 @@ public class MenuToolsConfiguration extends Menu{
             int idx = i+offset;
             if(i<pageMin)continue;
             ItemBuilder builder = makeItem(t.material);
-            if(Option.REQUIRED_NAME.toolValues.containsKey(t))builder.setDisplayName(Option.REQUIRED_NAME.getValue(t));
+//            if(Option.REQUIRED_NAME.toolValues.containsKey(t))builder.setDisplayName(Option.REQUIRED_NAME.getValue(t));
             builder.addLore("Shift-left click to move left");
             builder.addLore(("Shift-right click to move right"));
-            if(Option.REQUIRED_LORE.toolValues.containsKey(t)){
-                for(String lore : Option.REQUIRED_LORE.getValue(t)){
-                    builder.addLore(lore);
-                }
-            }
+//            if(Option.REQUIRED_LORE.toolValues.containsKey(t)){
+//                for(String lore : Option.REQUIRED_LORE.getValue(t)){
+//                    builder.addLore(lore);
+//                }
+//            }
             add(new Button(index, builder, (click) -> {
                 if(click==ClickType.LEFT)open(new MenuToolConfiguration(this, plugin, player, t));
                 if(click==ClickType.SHIFT_LEFT){

@@ -29,7 +29,7 @@ public abstract class TreeFellerCommand{
                 return cmd.onCommand(sender, command, label, trim(args, 1), fullArgs);
             }
         }
-        sender.sendMessage("Usage: /treefeller "+getFullUsage());
+        sender.sendMessage("Usage: "+getUsage());
         return true;
     }
     public List<String> onTabComplete(CommandSender sender, Command command, String label, String[] args){
@@ -60,18 +60,5 @@ public abstract class TreeFellerCommand{
         if(permission==null)return true;
         return sender.hasPermission(permission);
     }
-    protected String getUsage(){
-        return command;
-    }
-    protected String getFullUsage(){
-        String usage = command;
-        if(subcommands.length>0){
-            String subUsage = "";
-            for(TreeFellerCommand cmd : subcommands){
-                subUsage+="|"+cmd.getFullUsage();
-            }
-            usage+=" ["+subUsage.substring(1)+"]";
-        }
-        return usage;
-    }
+    protected abstract String getUsage();
 }
